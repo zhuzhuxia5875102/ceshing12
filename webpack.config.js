@@ -15,7 +15,7 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: false
-  },   
+  },
   resolve: {
     alias: {
       ...sharedMappings.getAliases(),
@@ -23,14 +23,14 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      
+
         // For remotes (please adjust)
-        // name: "ceshing12",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
-        
+        name: "ceshing12",
+        filename: "remoteEntry.js",
+        exposes: {
+          './web-components': './src/bootstrapmf.ts',
+        },
+
         // For hosts (please adjust)
         // remotes: {
         //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
@@ -38,14 +38,17 @@ module.exports = {
         // },
 
         shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-
+          // "@angular/core": { singleton: true, strictVersion: false, requiredVersion: 'auto' },
+          // "@angular/common": { singleton: true, strictVersion: false, requiredVersion: 'auto' },
+          // "@angular/common/http": { singleton: true, strictVersion: false, requiredVersion: 'auto' },
+          // "@angular/router": { singleton: true, strictVersion: false, requiredVersion: 'auto' },
+          "@angular/core": { requiredVersion: 'auto' },
+          "@angular/common": {  requiredVersion: 'auto' },
+          "@angular/common/http": {  requiredVersion: 'auto' },
+          "@angular/router": {requiredVersion: 'auto' },
           ...sharedMappings.getDescriptors()
         })
-        
+
     }),
     sharedMappings.getPlugin()
   ],

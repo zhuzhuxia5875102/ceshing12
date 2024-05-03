@@ -3,19 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MeComponent } from './me/me.component';
-import { ChildrenComponent } from './me/children/children.component';
 import { NzButtonModule} from "ng-zorro-antd/button";
+import {MeModule} from "./me/me.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MeComponent,
-    ChildrenComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MeModule,
     NzButtonModule
   ],
   providers: [],
