@@ -9,4 +9,38 @@
 <p>下图是定制应用的jpg</p>
 <img src="assets/imgs/avatar2.jpg" alt="">
 <p>模拟定制应用任务卡的入口组件结束(包含这句话，也是在入口组件中)</p>
+<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <p>Content one</p>
+    <p>Content two</p>
+
+    <a nz-dropdown [nzDropdownMenu]="menu">
+      Hover me
+      <i nz-icon nzType="down"></i>
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>1st menu item</li>
+        <li nz-menu-item>2nd menu item</li>
+        <li nz-menu-item>3rd menu item</li>
+        <li nz-menu-item nzDanger>4th danger item</li>
+      </ul>
+    </nz-dropdown-menu>
+  </ng-container>
+</nz-modal>
+<button nz-button nzType="primary" (click)="open()">Open</button>
+<nz-drawer
+  [nzClosable]="false"
+  [nzVisible]="visible"
+  nzPlacement="right"
+  nzTitle="Basic Drawer"
+  (nzOnClose)="close()"
+>
+  <ng-container *nzDrawerContent>
+    <p>Some contents...</p>
+    <p>Some contents...</p>
+    <button nz-button nzType="primary">测试zorro主题</button>
+  </ng-container>
+</nz-drawer>
 <p>----------------------------------------------------------------------------------------</p>
