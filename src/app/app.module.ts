@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NzButtonModule} from "ng-zorro-antd/button";
 import {MeModule} from "./me/me.module";
+import {DynamicAntFormUiModule} from "ngx-my-lib";
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import {MeModule} from "./me/me.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DynamicAntFormUiModule,
     MeModule,
     NzButtonModule
   ],

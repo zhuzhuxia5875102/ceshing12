@@ -19,6 +19,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NzDropDownModule} from "ng-zorro-antd/dropdown";
 import {NzIconModule} from "ng-zorro-antd/icon";
 import {NzDrawerModule} from "ng-zorro-antd/drawer";
+import {DynamicAntFormUiModule} from "ngx-my-lib";
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {NzDrawerModule} from "ng-zorro-antd/drawer";
     NzDropDownModule,
     NzIconModule,
     NzDrawerModule,
+    DynamicAntFormUiModule,
   ],
   exports:[
     MeComponent,
