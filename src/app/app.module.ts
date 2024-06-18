@@ -3,23 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NzButtonModule} from "ng-zorro-antd/button";
-import {MeModule} from "./me/me.module";
-import {DynamicAntFormUiModule} from "ngx-my-lib";
-
+import { MeModule } from './me/me.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DynamicAntFormUiModule,
-    MeModule,
-    NzButtonModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, MeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,7 +4,6 @@ import { Me2Component } from './me2/me2.component';
 import {shareNgZone} from "@angular-architects/module-federation-tools";
 import {createCustomElement} from "@angular/elements";
 import {BrowserModule} from "@angular/platform-browser";
-import {NzButtonModule} from "ng-zorro-antd/button";
 
 
 
@@ -15,7 +14,6 @@ import {NzButtonModule} from "ng-zorro-antd/button";
   imports: [
     BrowserModule,
     CommonModule,
-    NzButtonModule
   ],
   exports:[Me2Component],
   bootstrap: []
